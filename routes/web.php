@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('home');
+Route::get('/kategori', [App\Http\Controllers\MainController::class, 'kategori'])->name('kategori');
+Route::get('/transaksi', [App\Http\Controllers\MainController::class, 'transaksi'])->name('transaksi');
