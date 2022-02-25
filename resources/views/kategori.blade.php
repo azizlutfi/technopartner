@@ -15,14 +15,9 @@
             @component('components.navbar')
             @endcomponent
 
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
+            @component('components.category_list', ['in' => $in, 'out' => $out])
+            @endcomponent
 
-                <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800 text-center py-auto">Kategori!</h1>
-
-            </div>
-            <!-- /.container-fluid -->
         </div>
 
         <!-- End of Main Content -->
@@ -31,4 +26,7 @@
 
     </div>
     <!-- End of Content Wrapper -->
+    @component('components.modal_edit_kategori')
+    @endcomponent
+
 @endsection
