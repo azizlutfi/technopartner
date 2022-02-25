@@ -26,5 +26,10 @@ Route::delete('/kategori/{id}', [App\Http\Controllers\MainController::class, 'de
 
 //AJAX
 Route::post('/ajax_get_kategori', [App\Http\Controllers\MainController::class, 'getKategori']);
+Route::post('/ajax_category_option', [App\Http\Controllers\MainController::class, 'optionKategori']);
 
 Route::get('/transaksi', [App\Http\Controllers\MainController::class, 'transaksi'])->name('transaksi');
+Route::post('/transaksi', [App\Http\Controllers\MainController::class, 'saveTransaksi']);
+Route::get('/transaksi/{id}', [App\Http\Controllers\MainController::class, 'editTransaksi']);
+Route::put('/transaksi', [App\Http\Controllers\MainController::class, 'updateTransaksi']);
+Route::delete('/transaksi/{id}', [App\Http\Controllers\MainController::class, 'deleteTransaksi']);

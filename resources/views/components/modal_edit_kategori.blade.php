@@ -19,7 +19,7 @@
                         <option value="in">Pemasukan</option>
                         <option value="out">Pengeluaran</option>
                     </select>
-                    @error('type_modal')
+                    @error('typemodal')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -28,7 +28,7 @@
                 <div class="col-md-12 form-group mb-3">
                     <label for="" class="col-form-label font-weight-bold">Nama Kategori</label>
                     <input type="text" class="form-control" name="namemodal" id="namemodal" placeholder="Nama Kategori" required>
-                    @error('name_modal')
+                    @error('namemodal')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -37,7 +37,7 @@
                 <div class="col-md-12 form-group mb-3">
                     <label for="" class="col-form-label font-weight-bold">Deskripsi</label>
                     <input type="text" class="form-control" name="descriptionmodal" id="descriptionmodal" placeholder="Deskripsi" required>
-                    @error('description_modal')
+                    @error('descriptionmodal')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

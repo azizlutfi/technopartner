@@ -15,7 +15,7 @@
             @component('components.navbar')
             @endcomponent
 
-            @component('components.transaction_list', ['transaksi' => $transaksi])
+            @component('components.form_edit_transaction', ['transaction' => $transaction, 'cat'=> $category])
             @endcomponent
         </div>
 

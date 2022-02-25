@@ -15,7 +15,7 @@
             @component('components.navbar')
             @endcomponent
 
-            @component('components.main_info')
+            @component('components.main_info', ['in' => $in, 'out' => $out])
             @endcomponent
 
         </div>
