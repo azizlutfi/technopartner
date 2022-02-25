@@ -77,6 +77,41 @@
 
         <div class="col-lg-8">
             <div class="card shadow mb-4">
+                <div class="card-body">
+                    <form action="{{ url('/transaksi') }}" method="get">
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3 d-flex justify-content-center"><h4>Filter Transaksi</h4></div>
+                            <div class="col-md-5 form-group mb-3">
+                                <label for="" class="col-form-label font-weight-bold">Tanggal Start</label>
+                                <input type="text" class="form-control datetimepicker" name="from" id="from" required>
+                                @error('from')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-md-5 form-group mb-3">
+                                <label for="" class="col-form-label font-weight-bold">Tanggal Akhir</label>
+                                <input type="text" class="form-control datetimepicker" name="to" id="to" required>
+                                @error('to')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-md-2 form-group mb-3 d-flex align-items-end justify-content-center">
+                                    <button type="submit" class="btn btn-primary rounded-4 py-2 px-4">
+                                            {{ __('Filter') }}
+                                    </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="card shadow mb-4">
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="table-responsive mb-3">

@@ -18,9 +18,11 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.datetimepicker.full.min.js') }}"></script>
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/jquery.datetimepicker.min.css') }}">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -38,7 +40,13 @@
 
     </div>
     <!-- End of Page Wrapper -->
-
+    <script>
+        $('.datetimepicker').datetimepicker({
+            mask:true,
+            format:'d-m-Y',
+            timepicker:false
+        });
+    </script>
     <script type="text/javascript">
           var APP_URL = {!! json_encode(url('/')) !!}
     </script>
