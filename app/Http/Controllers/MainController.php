@@ -32,7 +32,6 @@ class MainController extends Controller
             'description' => 'required',
         ]);
 
-
         $new_cat = new Category;
         $new_cat->type = $request->type;
         $new_cat->name = $request->name;
@@ -50,7 +49,6 @@ class MainController extends Controller
             'namemodal' => 'required',
             'descriptionmodal' => 'required',
         ]);
-
 
         $new_cat = Category::find($request->idmodal);;
         $new_cat->type = $request->typemodal;
@@ -73,6 +71,11 @@ class MainController extends Controller
     public function transaksi(Request $request)
     {   
         if ($request->input('from') || $request->input('to')) {
+            $request->validate([
+                'from' => 'date_format:d-m-Y',
+                'to' => 'date_format:d-m-Y',
+            ]);
+
             $from = Carbon::createFromFormat('d-m-Y', $request->input('from'))->format('Y-m-d');
             $to = Carbon::createFromFormat('d-m-Y', $request->input('to'))->format('Y-m-d');
 
@@ -80,8 +83,10 @@ class MainController extends Controller
         } else {
             $transaction = Transaction::whereMonth('created_at', Carbon::now()->month)->get();
         }
+
+        $saldo = Transaction::where("transaction_type", "in")->sum('nominal') - Transaction::where("transaction_type", "out")->sum('nominal');
         
-        return view('transaksi', ['transaksi' => $transaction]);
+        return view('transaksi', ['transaksi' => $transaction, "saldo" => $saldo]);
     }
 
     public function saveTransaksi(Request $request)

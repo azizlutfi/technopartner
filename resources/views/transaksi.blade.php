@@ -15,7 +15,7 @@
             @component('components.navbar')
             @endcomponent
 
-            @component('components.transaction_list', ['transaksi' => $transaksi])
+            @component('components.transaction_list', ['transaksi' => $transaksi, "saldo" => $saldo])
             @endcomponent
         </div>
 
